@@ -7,7 +7,7 @@ build:
     docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/marsaf/test4:{{.VERSION}}'
+      template: '{{.DOCKER_REGISTRY}}/oraseemeafrtech1/test4:{{.VERSION}}'
   local: {}
 deploy:
   kubectl: {}
@@ -18,7 +18,7 @@ profiles:
     - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/marsaf/test4:{{.DIGEST_HEX}}'
+        template: '{{.DOCKER_REGISTRY}}/oraseemeafrtech1/test4:{{.DIGEST_HEX}}'
     local: {}
   deploy:
     helm:
@@ -26,5 +26,5 @@ profiles:
       - name: test4
         chartPath: charts/test4
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/marsaf/test4'
+          image.repository: '{{.DOCKER_REGISTRY}}/oraseemeafrtech1/test4'
           image.tag: '{{.DIGEST_HEX}}'
